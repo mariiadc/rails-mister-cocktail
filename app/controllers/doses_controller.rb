@@ -1,5 +1,6 @@
 class DosesController < ApplicationController
   # params[:dose] = {"description"=>"2 L", "ingredient_id"=>"104"}
+  before_action :fetch_cocktail, except: [:destroy]
 
   def new
     @dose = Dose.new
@@ -33,6 +34,10 @@ class DosesController < ApplicationController
   private
 
   def dose_params
-    params.require(:dose).permit(:description, :ingredient_id, :cocktail_id)
+    params.require(:dose).permit(:description, :ingredient_id)
+  end
+
+  def fetch_cocktail
+    @cocktail = Cocktail.find(params[:cocktail_id])
   end
 end
