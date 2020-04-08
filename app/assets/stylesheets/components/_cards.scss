@@ -1,35 +1,59 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
+  // grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
   margin-top: 30px;
-  margin-left: 40px;
+  margin-left: 150px;
+  margin-right: 150px;
   flex-grow: 1;
 
 }
 
 .card-category{
-  height: 300px;
-  // width: 300px;
-
-  background-image: url("https://source.unsplash.com/collection/962396"),url("https://source.unsplash.com/collection/4931760");
-  // background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+  height: 600px;
+  // width: 350px;
+  // background-image: url("https://source.unsplash.com/collection/962396"),url("https://source.unsplash.com/collection/4931760");
   background-position: center;
   background-size: cover;
+  font-family: 'Josefin Slab';
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-bottom: 30px;
+  padding-left: 25px;
   color: white;
   font-size: 24px;
-  font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  // border-radius: 5px;
+  // box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
 .card-category:hover {
   box-shadow: inset 0px 0px 16px 0px rgba(214,214,214,1);
 }
+
+.description {
+  display:none;
+  transition: all 6s ease-in-out;
+  z-index: 2;
+}
+
+
+
+.title:hover > ul {
+
+  display: block; }
+
+
+
+.btn_pink {
+  color: pink;
+
+}
+
+
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

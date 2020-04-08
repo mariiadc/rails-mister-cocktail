@@ -6,19 +6,23 @@ nav {
   margin: 0px auto;
 }
 h1 {
-  font-family: 'Limelight';
+  font-family: 'Allura';
   letter-spacing: 10px;
   padding-left: 20px;
   text-shadow: 2px 2px 4px #000000;
 }
 #new-btn {
-  font-family: 'Limelight';
-  border-radius: 4px;
-  background-color: white;
-  box-shadow: 0px 1px 16px 4px rgba(214,214,214,1);
-}
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-family: $body-font;
+  // border-radius: 4px;
+  background-color:rgb(254, 239, 239);
+//   box-shadow: 0px 1px 16px 4px rgba(214,214,214,1);
+// }
 
-#new-btn:hover {
-  box-shadow: inset 6px 4px 16px 4px rgba(214,214,214,1);
+// #new-btn:hover {
+//   box-shadow: inset 6px 4px 16px 4px rgba(214,214,214,1);
 
 }

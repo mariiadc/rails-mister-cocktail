@@ -1,7 +1,12 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Navbar</a>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
-</nav>
+<!-- Just an image -->
+<nav class="navbar navbar-light bg-light main">
+  <%= link_to root_path do %>
+    <%= image_tag "logo.png", width: 150, alt: "cocktails logo", class: "mx-3.5" %>
+  <% end %>
+  <h1>Cocktails</h1>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-light my-2 my-sm-0" type="submit" id="search-btn">Search</button>
+    </form> -->
+  <%= link_to 'Add New Cocktail' , new_cocktail_path,class: "btn btn-light mx-5", id: "new-btn" %>
+ </nav>

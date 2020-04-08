@@ -1,9 +1,19 @@
 
-<div class="cards">
+<div class="cards" data-aos="fade-down-left">
+
   <% @cocktails.each do |cocktail| %>
-    <div class="card-category" >
-    <%=cocktail.name%>
+     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key %>')">
+      <%= link_to cocktail, class: "btn_pink" do %>
+        <i class="fas fa-pencil-alt"></i>
+      <%end  %>
+      <div class="container title">
+          <h4><%=cocktail.name%></h4>
+        <% cocktail.ingredients.each do |ingredient| %>
+        <ul class="description">
+          <li><p><%= ingredient.name %></p></li>
+        </ul>
+      <% end %>
     </div>
+  </div>
   <% end %>
 </div>
-

@@ -6,15 +6,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  </head>
+<!--   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ -->  </head>
 
   <body>
-     <%= render partial: 'cocktails/navbar' %>
+     <%= render partial: 'shared/navbar' %>
     <%= yield %>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
   <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
-  </body>
+<!--   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ -->  </body>
 </html>
