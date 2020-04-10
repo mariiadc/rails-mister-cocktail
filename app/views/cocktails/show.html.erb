@@ -1,12 +1,16 @@
+<div class="header_title">
 <h1><%= @cocktail.name %></h1>
-<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-
+</div>
+<div class="row mt-4 mb-4">
+<div class="photo_input col-4">
+  <%= cl_image_tag @cocktail.photo.key, height: 600, width: 600, crop: :fill %>
+</div>
 <!-- <form action="/flats" method="post"></form>
 <form action="/doses" method="post"></form> -->
 <!-- "/cocktails/:cocktail_id/doses" -->
+<div class="col-1"></div>
 
-<div class="row mt-4 mb-4">
-  <div class="col-6">
+  <div class="col-2">
     <h3>Ingredients</h3>
     <% if @cocktail.doses.empty? %>
       <h6>No ingredients yet! 🤷🏻‍♂️</h6>
@@ -23,7 +27,7 @@
     <% end %>
   </div>
 
-  <div class="col-6">
+  <div class="col-4 simple-form">
     <h3>Add new ingredient</h3>
 
     <% if @dose.errors.any? %>
@@ -36,11 +40,13 @@
         </ul>
       </div>
     <% end %>
-
-    <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.input :description %>
-      <%= f.association :ingredient %>
-      <%= f.submit 'Add ingredient', class: 'btn btn-success' %>
-    <% end %>
+    <div class="simple-group">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient, collection: Ingredient.order('name ASC'), id: "form-dropdown"%>
+        <%= f.submit 'Add ingredient', class: 'btn btn-light new-btn' %>
+      <% end %>
+    </div>
   </div>
+  <div class="col-1"></div>
 </div>

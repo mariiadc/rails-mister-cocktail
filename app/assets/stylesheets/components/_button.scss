@@ -1,0 +1,14 @@
+.new-btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-family: 'Josefin Slab';
+  // border-radius: 4px;
+  background-color:rgb(254, 239, 239);
+  border: rgb(254, 239, 239);
+box-shadow: 10px 10px 5px -11px rgba(0,0,0,0.75);
+}
+.new-btn:hover {
+  box-shadow: none;
+}
