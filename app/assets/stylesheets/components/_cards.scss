@@ -63,20 +63,28 @@
 .edit {
   position: absolute;
   top: 10px;
-  left: 90%;
+  left: 85%;
 }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
     grid-template-columns: 1fr;
+    margin: 20px 60px auto;
+  }
+  .card-category {
+    height: 300px;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .cards {
-    grid-template-columns: 1fr;
+   grid-template-columns: 1fr 1fr;
+    margin-left: 10px auto;
+  }
+  .card-category {
+    height: 400px;
   }
 }
 
@@ -85,6 +93,9 @@
   .cards {
     grid-template-columns: 1fr 1fr;
   }
+  .card-category {
+    height: 450px;
+  }
 }
 
 // Large devices (desktops, 992px and up)
@@ -92,11 +103,21 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  .card-category {
+    height: 500px;
+  }
+
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+    .card-category {
+    height: 700px;
+  }
+    .edit {
+    left: 90%;
   }
 }
