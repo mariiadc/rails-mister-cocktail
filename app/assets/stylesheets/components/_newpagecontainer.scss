@@ -21,7 +21,12 @@
 
 #new-cocktail h1 {
   font-family: 'Allura';
+   text-shadow: 2px 2px 4px #f2f2f2;
 }
 .new-cocktail {
   font-family: 'Josefin Slab';
+}
+.submit-btn {
+  display: flex;
+  justify-content: space-between;
 }

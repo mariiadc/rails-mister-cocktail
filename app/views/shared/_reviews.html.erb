@@ -1,0 +1,30 @@
+  <div class="col-md-6  col-sm-10 simple-form mx-3 px-0">
+        <div class="mt-4 mb-4 ingredients">
+          <h3>Reviews</h3>
+          <% if @cocktail.reviews.empty? %>
+            <h6>No reviews yet! 🤷🏻‍♂️</h6>
+          <% else %>
+            <ul class="list-unstyled reviews">
+              <% @cocktail.reviews.each do |review| %>
+                <li class="review-stars">
+                  <% review.rating.times do %>
+                  <i class="fas fa-star clr-star"></i>
+                  <% end %>
+
+                </li>
+                <li class="review-content"><%= review.content %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+        <h3 class="mt-4">Add Review</h3>
+        <div class="simple-group">
+          <%= simple_form_for [@cocktail, @review] do |f| %>
+            <%= f.select :rating,(1..5) %>
+            <%= f.input :content%>
+        <!-- </div>
+        <div> -->
+            <%= f.submit 'Add review', class: 'btn btn-light new-btn' %>
+          <% end %>
+        </div>
+    </div>

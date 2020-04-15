@@ -1,0 +1,38 @@
+<div class="col-md-4  col-sm-10 simple-form mx-3 px-0">
+  <h3>Add new ingredient</h3>
+  <% if @dose.errors.any? %>
+    <div class="alert alert-danger">
+      <h3>Dose has errors!</h3>
+      <ul>
+        <% @dose.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="simple-group">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :description %>
+      <%= f.association :ingredient, collection: Ingredient.order('name ASC'), id: "form-dropdown"%>
+    <!--  </div>
+     <div> -->
+      <%= f.submit 'Add ingredient', class: 'btn btn-light new-btn' %>
+    <% end %>
+  </div>
+  <div class="mt-4 ingredients">
+    <h3>Ingredients</h3>
+    <% if @cocktail.doses.empty? %>
+      <h6>No ingredients yet! 🤷🏻‍♂️</h6>
+    <% else %>
+      <ul class="list-unstyled">
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <strong><%= dose.ingredient.name %></strong>
+            &mdash; <%= dose.description %>
+            (<%= link_to 'delete', dose_path(dose), method: :delete %>)
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
