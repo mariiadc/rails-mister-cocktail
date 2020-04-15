@@ -38,13 +38,13 @@
   transition: all 6s ease-in-out;
   z-index: 2;
 }
-.title {
+.inline-block {
 
   display: flex;
   justify-content: space-between;
 }
 
-.title:hover > ul {
+.title:hover > .description {
 
   display: block; }
 

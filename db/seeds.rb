@@ -30,7 +30,7 @@ file5 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1586531050/
 file6 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1586531050/mrcocktail/1_sasovp.jpg')
 
 good = Cocktail.create(name: "Strawberry Delight")
-good2 = Cocktail.create(name: "Grapefruit Spoon Swoon")
+good2 = Cocktail.create(name: "Grapefruit Swoon")
 good3 = Cocktail.create(name: "Tropical Heaven")
 good4 = Cocktail.create(name: "Red Moon")
 good5 = Cocktail.create(name: "Bloody Gin")
