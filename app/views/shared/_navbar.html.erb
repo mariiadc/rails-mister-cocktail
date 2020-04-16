@@ -8,5 +8,13 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-light my-2 my-sm-0" type="submit" id="search-btn">Search</button>
     </form> -->
+    <div class="totheright">
+    <div class="form-inline">
+      <%= form_tag cocktails_path, method: :get do %>
+        <%= text_field_tag :query,params[:query],class: "form-control typed-fade-ou typed-cursor font",placeholder: "Find a cocktail" %>
+        <%= submit_tag "Search", class: "btn btn-light btn-search" %>
+      <% end %>
+    </div>
   <%= link_to 'Add New Cocktail' , new_cocktail_path,class: "btn btn-light mx-5 new-btn" %>
+  </div>
  </nav>

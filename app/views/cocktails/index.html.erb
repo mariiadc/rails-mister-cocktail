@@ -1,9 +1,15 @@
 
 <div class="cards" data-aos="fade-down-left">
   <% @cocktails.each do |cocktail| %>
-    <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path cocktail.photo.key %>')">
+    <div class="card-category " data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path cocktail.photo.key %>')">
       <div class="container">
-        <p id="top-left">POPULAR</p>
+        <% if cocktail.reviews.sum(:rating) == 0 %>
+          <p id="top-left"> NEWLY ADDED</p>
+        <% else %>
+          <p id="top-left">POPULAR</p>
+        <% end %>
         <div class="edit">
           <%= link_to cocktail, class: "btn_pink" do %>
             <i class="fas fa-pencil-alt"></i>
@@ -15,8 +21,8 @@
           <h4><%=cocktail.name%></h4>
           <ul class="list-unstyled">
             <li class="review-stars">
-              <% a=[3,4,5] %>
-              <% a.sample.times do %>
+              <% average_review = cocktail.reviews.sum(:rating) / (cocktail.reviews.count > 0 ?  cocktail.reviews.count : 1) %>
+              <% average_review.times do %>
                 <i class="fas fa-star clr-star"></i>
               <% end %>
             </li>
@@ -24,7 +30,11 @@
           </div>
           <% cocktail.ingredients.each do |ingredient| %>
             <ul class="description">
-              <li><p><%= ingredient.name %></p></li>
+              <li><p><%= ingredient.name %>
+               <% cocktail.doses.each do |dose| %>
+               &mdash; <%= dose.description %>
+               <% end %>
+              </p></li>
             </ul>
           <% end %>
         </div>
@@ -32,3 +42,5 @@
     </div>
   <% end %>
 </div>
+ <div class="push my-4"></div>
+

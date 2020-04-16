@@ -13,6 +13,7 @@ puts "Destroying all"
 Cocktail.destroy_all
 Dose.destroy_all
 Ingredient.destroy_all
+Review.destroy_all
 puts "Creating seed"
 
 url = open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read
@@ -35,6 +36,24 @@ good3 = Cocktail.create(name: "Tropical Heaven")
 good4 = Cocktail.create(name: "Red Moon")
 good5 = Cocktail.create(name: "Bloody Gin")
 good6 = Cocktail.create(name: "Popsical Sweetheart")
+
+
+review = Review.create(rating: 5, content: "Awesome!", cocktail: good)
+review = Review.create(rating: 4, content: "Not bad!", cocktail: good2)
+review = Review.create(rating: 3, content: "Meh! Nice, but could be better!", cocktail: good3)
+review = Review.create(rating: 5, content: "Awesome!", cocktail: good4)
+review = Review.create(rating: 3, content: "Meh! Nice, but could be better!", cocktail: good5)
+review = Review.create(rating: 4, content: "Not bad!", cocktail: good6)
+review = Review.create(rating: 2, content: "Do not recommend!", cocktail: good)
+review = Review.create(rating: 5, content: "Awesome!", cocktail: good2)
+review = Review.create(rating: 2, content: "Do not recommend!", cocktail: good3)
+review = Review.create(rating: 1, content: "No! Just no...", cocktail: good4)
+review = Review.create(rating: 3, content: "Meh! Nice, but could be better!", cocktail: good5)
+review = Review.create(rating: 4, content: "Not bad!", cocktail: good6)
+
+
+ingredient = Ingredient.create(name: 'cookies')
+dose = Dose.create(description: '200gr', ingredient: ingredient, cocktail: good)
 
 good.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 good2.photo.attach(io: file2, filename: 'nes1.jpg', content_type: 'image/jpg')

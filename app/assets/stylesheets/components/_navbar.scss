@@ -11,13 +11,27 @@ nav {
   text-align: center;
   font-family: 'Allura';
   letter-spacing: 10px;
-  padding-left: 20px;
   text-shadow: 2px 2px 4px #000000;
 }
 .headline:hover {
   color: black;
   text-decoration: none;
 }
+.font {
+  font-family: 'Josefin Slab';
+}
+
+.btn-search {
+
+  border: 1px solid lightgrey;
+  color: grey;
+  font-family: 'Josefin Slab';
+}
+.totheright {
+  display: flex;
+  justify-content: space-around;
+}
+
 //
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -58,5 +72,8 @@ nav {
   .navbar {
     width: 100%;
   }
+.headline {
 
+  padding-left: 350px;
+}
 }
