@@ -29,6 +29,7 @@ file3 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1586531050/
 file4 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1586531050/mrcocktail/5_rsy089.jpg')
 file5 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1586531050/mrcocktail/6_d06jii.jpg')
 file6 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1586531050/mrcocktail/1_sasovp.jpg')
+file7 = URI.open('https://res.cloudinary.com/djx2n26vg/image/upload/v1587046618/mrcocktail/GfyrJZWnLjxxK4Nu92Tuu9eH.jpg')
 
 good = Cocktail.create(name: "Strawberry Delight")
 good2 = Cocktail.create(name: "Grapefruit Swoon")
@@ -36,7 +37,7 @@ good3 = Cocktail.create(name: "Tropical Heaven")
 good4 = Cocktail.create(name: "Red Moon")
 good5 = Cocktail.create(name: "Bloody Gin")
 good6 = Cocktail.create(name: "Popsical Sweetheart")
-
+good7 = Cocktail.create(name: 'Citrus Balm')
 
 review = Review.create(rating: 5, content: "Awesome!", cocktail: good)
 review = Review.create(rating: 4, content: "Not bad!", cocktail: good2)
@@ -61,11 +62,13 @@ good3.photo.attach(io: file3, filename: 'nes2.jpg', content_type: 'image/jpg')
 good4.photo.attach(io: file4, filename: 'nes3.jpg', content_type: 'image/jpg')
 good5.photo.attach(io: file5, filename: 'nes4.jpg', content_type: 'image/jpg')
 good6.photo.attach(io: file6, filename: 'nes5.jpg', content_type: 'image/jpg')
+good7.photo.attach(io: file7, filename: 'nes6.jpg', content_type: 'image/jpg')
 good.save!
 good2.save!
 good3.save!
 good4.save!
 good5.save!
 good6.save!
+good7.save!
 
 puts "I am done here!"
